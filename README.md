@@ -13,6 +13,8 @@ In order to use this, you need to implement both DwmExtendFrameIntoClientArea as
 Using these, we are able to render the window transparently and avoid setting a topmost flag.
 By periodically setting the window to the top (every 50ms or so), we do not cause adverse reactions with certain applications that may aim to block overlays.
 
+Also, it is important to note that you will be doing this from a different thread. Always validate that your window handle is correct. An unrelated bug is that when another window requests top most, it has the possibility to stall the actual overlay thread. Be wary of this & implement the correct safety checks...
+
 Example:
 ```
 //You can dynamically set these margins. Margins is a struct that contains four integers. Left, Right, Top, Bottom.
