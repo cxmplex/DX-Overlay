@@ -94,9 +94,6 @@ namespace OverlayExample
 
             [DllImport("user32.dll")]
             public static extern bool SetLayeredWindowAttributes(IntPtr hwnd, uint crKey, byte bAlpha, uint dwFlags);
-
-            [DllImport("dwmapi.dll")]
-            public static extern void DwmExtendFrameIntoClientArea(IntPtr hWnd, ref Margins pMargins);
             #endregion
         }
     }
