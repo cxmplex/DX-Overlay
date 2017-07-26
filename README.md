@@ -15,9 +15,11 @@ By periodically setting the window to the top (every 50ms or so), we do not caus
 
 Also, it is important to note that you will be doing this from a different thread. Always validate that your window handle is correct. An unrelated bug is that when another window requests top most, it has the possibility to stall the actual overlay thread. Be wary of this & implement the correct safety checks...
 
+You'll also need to implement the text renderer (basically a one liner function for SharpDX to render text) as well as a RawColor function.
+
 Example:
 ```
-//You can dynamically set these margins. Margins is a struct that contains four integers. Left, Right, Top, Bottom. Remember that you will also need to set the form margins correctly or you'll end up with some weird bugs. 
+//You can dynamically set these margins. Margins is a struct that contains four integers. Left, Right, Top, Bottom. Remember that you will also need to set the form margins correctly or you'll end up with some weird bugs especially when using WorldToScreen. 
 var marg = new Win32.Margins();
 marg.Left = 0;
 marg.Top = 0;
