@@ -17,7 +17,7 @@ Also, it is important to note that you will be doing this from a different threa
 
 Example:
 ```
-//You can dynamically set these margins. Margins is a struct that contains four integers. Left, Right, Top, Bottom.
+//You can dynamically set these margins. Margins is a struct that contains four integers. Left, Right, Top, Bottom. Remember that you will also need to set the form margins correctly or you'll end up with some weird bugs. 
 var marg = new Win32.Margins();
 marg.Left = 0;
 marg.Top = 0;
